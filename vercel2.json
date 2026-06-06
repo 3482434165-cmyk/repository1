@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [{"src": "**/*","use": "@vercel/static"}],
+  "rewrites": [{"source": "/(.*)","destination": "/index.html"}],
+  "headers": [
+    {
+      "source": "**/*.{html,css,js,png,jpg,svg,ico,webp}",
+      "headers": [
+        {"key":"Cache-Control","value":"public,max-age=2592000"}
+      ]
+    }
+  ]
+}
