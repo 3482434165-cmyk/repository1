@@ -1,10 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xlx</title> <!-- 网页标题，显示在浏览器标签页上 -->
+    <style>
+        /* 基础重置与全局样式 - 让页面看起来干净简洁 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        /* 内容容器，控制最大宽度和居中 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            padding: 2rem 1.8rem;
+        }
+
+        /* 头部区域 - 展示名字和简短身份 */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0f172a;
+        }
+
+        .sub {
+            color: #475569;
+            margin-top: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        /* 分割线装饰 */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #3b82b6;
+            margin: 1rem auto 1.5rem;
+            border-radius: 3px;
+        }
+
+        /* 个人简介段落 */
+        .bio {
+            background: #f8fafc;
+            padding: 1.2rem 1.5rem;
+            border-radius: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            border-left: 4px solid #3b82b6;
+        }
+
+        /* 区块标题 */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.8rem 0 1rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #e2e8f0;
+            display: inline-block;
+        }
+
+        /* 项目卡片网格布局 - 展示作品或内容 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin: 1.2rem 0 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            border-color: #b9d0f0;
+            box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 0.7rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: #eef2ff;
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            color: #1e40af;
+        }
+
+        /* 社交链接区域 - 展示联系方式 */
+        .links {
+            margin: 2rem 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .link-btn {
+            background: #f1f5f9;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .link-btn:hover {
+            background: #e2e8f0;
+        }
+
+        /* 页脚版权 */
+        .footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式小调整 */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- ========= 头部模块：标题 xlx ========= -->
+        <div class="header">
+            <h1>xlx</h1>                 <!-- 网页主标题，显示为 xlx -->
+            <div class="sub">创造 · 探索 · 分享</div>
+            <div class="divider"></div>   <!-- 装饰线 -->
+        </div>
 
+        <!-- ========= 个人简介模块：介绍自己 ========= -->
+        <div class="bio">
+            <p>✨ 你好，我是 xlx。一名热爱设计、代码与创意内容的开发者。<br>
+            喜欢把想法落地成干净简洁的网页，相信好的体验源于细节。</p>
+        </div>
+
+        <!-- ========= 项目 / 作品展示模块 ========= -->
+        <h2 class="section-title">📁 近期作品</h2>
+        <div class="grid">
+            <!-- 项目卡片 1 -->
+            <div class="card">
+                <h3>灵境笔记</h3>
+                <p>极简风格云端笔记，支持Markdown与暗色模式，让记录变得优雅。</p>
+                <span class="tag">前端</span> <span class="tag">Vue</span>
+            </div>
+            <!-- 项目卡片 2 -->
+            <div class="card">
+                <h3>像素时钟</h3>
+                <p>动态像素风格的番茄钟工具，兼具趣味与效率，适配移动端。</p>
+                <span class="tag">JS</span> <span class="tag">CSS动画</span>
+            </div>
+            <!-- 项目卡片 3 -->
+            <div class="card">
+                <h3>组件画廊</h3>
+                <p>收集日常开发中的UI组件库，可视化的交互展示与代码片段。</p>
+                <span class="tag">React</span> <span class="tag">Storybook</span>
+            </div>
+            <!-- 项目卡片 4 展示更多 -->
+            <div class="card">
+                <h3>AI 壁纸工坊</h3>
+                <p>调用开源模型生成创意壁纸，简约的prompt编辑器体验。</p>
+                <span class="tag">API</span> <span class="tag">生成艺术</span>
+            </div>
+        </div>
+
+        <!-- ========= 关于 / 技能或兴趣模块 ========= -->
+        <h2 class="section-title">🌟 关注领域</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>交互设计</h3>
+                <p>注重微动效与可用性，打造直观流畅的用户旅程。</p>
+            </div>
+            <div class="card">
+                <h3>前端架构</h3>
+                <p>组件化设计与性能优化，构建可维护的现代Web应用。</p>
+            </div>
+            <div class="card">
+                <h3>独立创作</h3>
+                <p>撰写技术随笔与设计思考，分享个人项目经验。</p>
+            </div>
+        </div>
+
+        <!-- ========= 社交联络模块：展示外部链接 (占位，可替换真实链接) ========= -->
+        <div class="links">
+            <a href="#" class="link-btn">🐙 GitHub</a>
+            <a href="#" class="link-btn">📧 邮箱联系</a>
+            <a href="#" class="link-btn">🕸️ 个人博客</a>
+            <a href="#" class="link-btn">📷 小红书</a>
+        </div>
+
+        <!-- ========= 底部版权信息 ========= -->
+        <div class="footer">
+            © 2026 xlx · 简单个人主页 | 保持热爱
+        </div>
+    </div>
+
+    <!-- 极简脚本：只是控制台输出一句 xlx 标记，没有功能扩展，符合精简要求 -->
+    <script>
+        // 控制台输出标题标识 (仅仅用于标记，无功能侵入)
+        console.log("网页标题: xlx | 个人主页 loaded");
+    </script>
 </body>
 </html>
